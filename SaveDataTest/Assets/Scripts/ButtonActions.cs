@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows;
+using UnityEngine.SceneManagement;
 
 public class ButtonActions : MonoBehaviour
 {
@@ -18,10 +19,11 @@ public class ButtonActions : MonoBehaviour
         roamingFolder = Directory.roamingFolder;
         saveHere = Application.persistentDataPath;
 
-        print("Local Folder: " + localFolder);
-        print("Roaming Folder: " + roamingFolder);
+        //print("Local Folder: " + localFolder);
+        //print("Roaming Folder: " + roamingFolder);
 
-        print("Persistant Data Path: " + Application.persistentDataPath);
+        //print("Persistant Data Path: " + Application.persistentDataPath);
+        //print(SlotSave.fileLoaded);
     }
     public void CreateFile()
     {
