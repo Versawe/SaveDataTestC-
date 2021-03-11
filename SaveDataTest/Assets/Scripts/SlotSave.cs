@@ -68,7 +68,7 @@ public class SlotSave : MonoBehaviour
 
     public void CreateSlot1()
     {
-        if (slot1Exists)
+        if (slot1Exists && System.IO.File.Exists(persistentPath + ".Slot1Data.txt"))
         {
             foreach (string line in System.IO.File.ReadLines(persistentPath + "/Slot1Data.txt"))
             {
@@ -88,7 +88,7 @@ public class SlotSave : MonoBehaviour
 
     public void CreateSlot2()
     {
-        if (slot2Exists)
+        if (slot2Exists && System.IO.File.Exists(persistentPath + ".Slot2Data.txt"))
         {
             foreach (string line in System.IO.File.ReadLines(persistentPath + "/Slot2Data.txt"))
             {
@@ -108,7 +108,7 @@ public class SlotSave : MonoBehaviour
 
     public void CreateSlot3()
     {
-        if (slot3Exists)
+        if (slot3Exists && System.IO.File.Exists(persistentPath + ".Slot3Data.txt"))
         {
             foreach (string line in System.IO.File.ReadLines(persistentPath + "/Slot3Data.txt"))
             {

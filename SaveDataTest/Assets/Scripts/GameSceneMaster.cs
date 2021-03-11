@@ -17,13 +17,18 @@ public class GameSceneMaster : MonoBehaviour
     {
         grabFilePath = Application.persistentDataPath + "/" + NoDestroy.fileLoaded;
 
-        //if(NoDestroy.fileLoaded == "Slot1Data.txt") Instantiate(Cube, Vector3.zero, Quaternion.identity);
-        //if (NoDestroy.fileLoaded == "Slot2Data.txt") Instantiate(Cylinder, Vector3.zero, Quaternion.identity);
-        //if (NoDestroy.fileLoaded == "Slot3Data.txt") Instantiate(Sphere, Vector3.zero, Quaternion.identity);
+        if (!System.IO.File.Exists(grabFilePath))
+        {
+            print("file not there");
+            SceneManager.LoadScene("SlotScene");
+            return;
+        }
         print(NoDestroy.fileLoaded);
 
         geometryName = System.IO.File.ReadAllLines(grabFilePath)[1];
         print(geometryName);
+
+        Instantiate(Resources.Load("Prefabs/"+geometryName), Vector3.zero, Quaternion.identity);
     }
     public void LoadScene()
     {
