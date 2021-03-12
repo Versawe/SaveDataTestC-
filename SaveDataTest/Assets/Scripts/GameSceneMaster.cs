@@ -17,16 +17,21 @@ public class GameSceneMaster : MonoBehaviour
     {
         grabFilePath = Application.persistentDataPath + "/" + NoDestroy.fileLoaded;
 
+        foreach (string e in System.IO.File.ReadAllLines(grabFilePath))
+        {
+            print(e);
+        }
+
         if (!System.IO.File.Exists(grabFilePath))
         {
             print("file not there");
             SceneManager.LoadScene("SlotScene");
             return;
         }
-        print(NoDestroy.fileLoaded);
+        //print(NoDestroy.fileLoaded);
 
         geometryName = System.IO.File.ReadAllLines(grabFilePath)[1];
-        print(geometryName);
+        //print(geometryName);
 
         Instantiate(Resources.Load("Prefabs/"+geometryName), Vector3.zero, Quaternion.identity);
     }

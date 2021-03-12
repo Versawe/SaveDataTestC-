@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Windows;
 using UnityEngine.UI;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class InGameUI : MonoBehaviour
 {
@@ -13,18 +14,6 @@ public class InGameUI : MonoBehaviour
     public Button cubeButt;
     public Button sphereButt;
     public Button cylinderButt;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void ChangeGeometryClicked()
     {
@@ -53,16 +42,25 @@ public class InGameUI : MonoBehaviour
         string persistantPath = Application.persistentDataPath + "/" + NoDestroy.fileLoaded;
         if (!System.IO.File.Exists(persistantPath)) return;
 
-        string[] arrline = System.IO.File.ReadAllLines(persistantPath);
-        arrline[1] = "Cube";
+        //string[] arrline = System.IO.File.ReadAllLines(persistantPath);
+        //arrline[1] = "Cube";
         string newString = "";
-        foreach(string e in System.IO.File.ReadAllLines(persistantPath))
+        //print(System.IO.File.ReadAllLines(persistantPath).Length);
+        for(int i = 0; i < System.IO.File.ReadAllLines(persistantPath).Length; i++)
         {
-            newString = newString + e;
+            if (i != 1) newString = newString + System.IO.File.ReadAllLines(persistantPath)[i];
+            else newString = newString + "\nCube";
         }
 
-        //System.IO.File.Delete(persistantPath);
-        //System.IO.File.WriteAllText(persistantPath, arrline);
+        System.IO.File.Delete(persistantPath);
+        System.IO.File.WriteAllText(persistantPath, newString);
+
+        foreach (string e in System.IO.File.ReadAllLines(persistantPath)) 
+        {
+            print(e);
+        }
+
+        SceneManager.LoadScene("GameScene");
 
     }
 }

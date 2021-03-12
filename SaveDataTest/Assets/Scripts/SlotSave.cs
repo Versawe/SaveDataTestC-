@@ -68,7 +68,7 @@ public class SlotSave : MonoBehaviour
 
     public void CreateSlot1()
     {
-        if (slot1Exists && System.IO.File.Exists(persistentPath + ".Slot1Data.txt"))
+        if (File.Exists(persistentPath + "/Slot1Data.txt"))
         {
             foreach (string line in System.IO.File.ReadLines(persistentPath + "/Slot1Data.txt"))
             {
@@ -76,19 +76,20 @@ public class SlotSave : MonoBehaviour
             }
             NoDestroy.fileLoaded = "Slot1Data.txt";
             SceneManager.LoadScene("GameScene");
-            return;
         }
-
-        System.IO.File.WriteAllText(persistentPath + "/Slot1Data.txt", "Slot 1 Data\nCube");
-        Slot1Butt.gameObject.SetActive(false);
-        slot1Exists = true;
-        NoDestroy.fileLoaded = "Slot1Data.txt";
-        SceneManager.LoadScene("GameScene");
+        else if (!File.Exists(persistentPath + "/Slot1Data.txt"))
+        {
+            print("create FILE");
+            System.IO.File.WriteAllText(persistentPath + "/Slot1Data.txt", "Slot 1 Data\nCube");
+            Slot1Butt.gameObject.SetActive(false);
+            NoDestroy.fileLoaded = "Slot1Data.txt";
+            SceneManager.LoadScene("GameScene");
+        }
     }
 
     public void CreateSlot2()
     {
-        if (slot2Exists && System.IO.File.Exists(persistentPath + ".Slot2Data.txt"))
+        if (File.Exists(persistentPath + "/Slot2Data.txt"))
         {
             foreach (string line in System.IO.File.ReadLines(persistentPath + "/Slot2Data.txt"))
             {
@@ -96,19 +97,20 @@ public class SlotSave : MonoBehaviour
             }
             NoDestroy.fileLoaded = "Slot2Data.txt";
             SceneManager.LoadScene("GameScene");
-            return;
         }
-
-        System.IO.File.WriteAllText(persistentPath + "/Slot2Data.txt", "Slot 2 Data\nCylinder");
-        Slot2Butt.gameObject.SetActive(false);
-        slot2Exists = true;
-        NoDestroy.fileLoaded = "Slot2Data.txt";
-        SceneManager.LoadScene("GameScene");
+        else if (!File.Exists(persistentPath + "/Slot2Data.txt"))
+        {
+            print("create FILE");
+            System.IO.File.WriteAllText(persistentPath + "/Slot2Data.txt", "Slot 2 Data\nCylinder");
+            Slot2Butt.gameObject.SetActive(false);
+            NoDestroy.fileLoaded = "Slot2Data.txt";
+            SceneManager.LoadScene("GameScene");
+        }
     }
 
     public void CreateSlot3()
     {
-        if (slot3Exists && System.IO.File.Exists(persistentPath + ".Slot3Data.txt"))
+        if (File.Exists(persistentPath + "/Slot3Data.txt"))
         {
             foreach (string line in System.IO.File.ReadLines(persistentPath + "/Slot3Data.txt"))
             {
@@ -116,14 +118,15 @@ public class SlotSave : MonoBehaviour
             }
             NoDestroy.fileLoaded = "Slot3Data.txt";
             SceneManager.LoadScene("GameScene");
-            return;
         }
-
-        System.IO.File.WriteAllText(persistentPath + "/Slot3Data.txt", "Slot 3 Data\nSphere");
-        Slot3Butt.gameObject.SetActive(false);
-        slot3Exists = true;
-        NoDestroy.fileLoaded = "Slot3Data.txt";
-        SceneManager.LoadScene("GameScene");
+        else if (!File.Exists(persistentPath + "/Slot3Data.txt"))
+        {
+            print("create FILE");
+            System.IO.File.WriteAllText(persistentPath + "/Slot3Data.txt", "Slot 3 Data\nSphere");
+            Slot3Butt.gameObject.SetActive(false);
+            NoDestroy.fileLoaded = "Slot3Data.txt";
+            SceneManager.LoadScene("GameScene");
+        }
     }
 
     public void ContinueTrigger()
