@@ -468,7 +468,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1790,10 +1790,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e50f7f4cfa14a749a206a4edba22514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sphere: {fileID: 9045817604365016636, guid: 8c334289a06539747a197f5b73c947ca, type: 3}
-  cube: {fileID: 3649392701135795486, guid: 3a62f962ae4d36f42a17c058dcee0563, type: 3}
-  cylinder: {fileID: 4241359232457936409, guid: d2936a070ac57fe459ed64b0c0094c2f, type: 3}
-  fileLoaded: 
 --- !u!4 &1672564987
 Transform:
   m_ObjectHideFlags: 0

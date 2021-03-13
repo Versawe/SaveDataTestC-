@@ -1401,9 +1401,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1856597621}
-        m_TargetAssemblyTypeName: GameSceneMaster, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 308086388}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
+        m_MethodName: ChangeToSphere
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1616,9 +1616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75272e8a5c9ac3348bb131abd95f391e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sphere: {fileID: 0}
-  Cube: {fileID: 0}
-  Cylinder: {fileID: 0}
   grabFilePath: 
   geometryName: 
 --- !u!4 &1856597622
@@ -2189,9 +2186,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1856597621}
-        m_TargetAssemblyTypeName: GameSceneMaster, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 308086388}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
+        m_MethodName: ChangeToCylinder
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
